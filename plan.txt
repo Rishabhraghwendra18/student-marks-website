@@ -1,0 +1,27 @@
+Methods:
+1)Add student
+2)Delete student
+3)Search student
+4)Use database in cache to store students names and marks .
+5)js to inject html of result
+
+-------------------------------------------------------------Front-End--------------------------------------------------------------------
+background color:fcf876
+2 place holder cards with white background and black text
+text will be in center of both place holders
+a black thick border between the placeholder cards.
+heading will be bold
+input(type="text") bottom border (no border-radius and background:none) of blue violet
+A search,add,delete button . When over it background changes to blue violet and text white color.
+each button will be next to each other.
+
+left placeholder card:
+it will be used to show the result of above methods .
+Here we will use js to inject html which will contain result of above methods. (dynamic result)
+
+
+
+width of both place holders cards will be same .
+
+-------------------------------------------------------------Back-End--------------------------------------------------------------------
+indexeddb in js to store data in database which will be stored in cache
