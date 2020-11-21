@@ -7,6 +7,7 @@ Methods:
 
 -------------------------------------------------------------Front-End--------------------------------------------------------------------
 background color:fcf876
+font:Robot Slab
 2 place holder cards with white background and black text
 text will be in center of both place holders
 a black thick border between the placeholder cards.
