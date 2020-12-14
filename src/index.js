@@ -6,8 +6,6 @@ function Add() {
     }
     request.onsuccess = function (event) {
         db = event.target.result;
-        let temp = request.result;
-        console.log("DataBase Created!!");
         const tx = db.transaction("student_records", "readwrite");
         const sRecords = tx.objectStore("student_records");
         const rollno = document.getElementById("rollNo").value;
