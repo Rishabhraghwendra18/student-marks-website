@@ -57,3 +57,6 @@ body{
     cursor: pointer;
     padding: 2px 23px;
 }
+th{
+    width: 79px;
+}
