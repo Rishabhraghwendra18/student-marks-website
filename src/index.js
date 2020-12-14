@@ -81,5 +81,40 @@ function Search() {
     }
 }
 function Delete() {
-
+    let request = window.indexedDB.open("studentData", 1);
+    request.onupgradeneeded = e => {
+        e.target.transaction.abort();
+        const div = document.getElementById("result");
+        const lresult = "<label>Error:Database doesn't exists</label>"
+        div.innerHTML = lresult;
+    }
+    request.onsuccess = function (event) {
+        db = event.target.result;
+        const tx = db.transaction("student_records", "readwrite");
+        const sRecords = tx.objectStore("student_records");
+        const rollno = document.getElementById("rollNo").value;
+        const data = sRecords.delete(rollno);
+        data.onsuccess = () => {
+            if (typeof data.result == "undefined") {
+                const syntax="Deleted Successfully"
+                const div = document.getElementById("result");
+                div.innerHTML = syntax;
+            }
+            else{
+                const div = document.getElementById("result");
+                const lresult = "<label>No Record found . Can't delete</label>"
+                div.innerHTML = lresult;
+            }
+        }
+        data.onerror = () => {
+            const div = document.getElementById("result");
+            const lresult = "<label>Error:Can't open record</label>"
+            div.innerHTML = lresult;
+        }
+    }
+    request.onerror = () => {
+        const div = document.getElementById("result");
+        const lresult = "<label>Error:Can't open database</label>"
+        div.innerHTML = lresult;
+    }
 }
